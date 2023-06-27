@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>www.loksaieta.com</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <title>Login</title>
 </head>
 <body>
-  <div class="jumbotron" style="background-color:white">
-      <img src="https://octodex.github.com/images/spidertocat.png" alt="Spidertocat"
-           class="img-responsive center-block" style="width:250px"/>
-      <h2 class="text-center">Hello Everyone</h2>
-      <p class="text-center">test deployment - github webhook demo1- DCP29 ---  ...</p>
-  </div>
+    <h2>Login</h2>
+
+    <%-- Display error message if any --%>
+    <c:if test="${not empty errorMessage}">
+        <p style="color: red;">${errorMessage}</p>
+    </c:if>
+
+    <form action="login" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <input type="submit" value="Login">
+        </div>
+    </form>
 </body>
 </html>
